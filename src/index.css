@@ -1,13 +1,104 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+:root {
+  --primary-color: #b3c4c7;
+  --text-color: #001114;
+}
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: lightgrey;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+}
+
+hr {
+  border-color: var(--primary-color);
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: rgb(230, 235, 236);
+  background: linear-gradient(
+    114deg,
+    rgba(230, 235, 236, 1) 0%,
+    rgba(179, 196, 199, 1) 30%,
+    rgba(179, 196, 199, 1) 70%,
+    rgba(230, 235, 236, 1) 100%
+  );
+}
+
+.main {
+  max-height: calc(100% - 100px);
+  max-width: 700px;
+  width: 90%;
+  padding: 10px 15px;
+  margin: 10px auto;
+  overflow: hidden;
+
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(179, 196, 199, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  -webkit-box-shadow: 7px 7px 20px -2px rgba(0, 23, 27, 0.1);
+  -moz-box-shadow: 7px 7px 20px -2px rgba(0, 23, 27, 0.1);
+  box-shadow: 7px 7px 20px -2px rgba(0, 23, 27, 0.1);
+}
+
+button {
+  margin: 0 10px;
+  min-width: 20px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 15px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  -webkit-box-shadow: 7px 7px 20px -2px rgba(0, 23, 27, 0.1);
+  -moz-box-shadow: 7px 7px 20px -2px rgba(0, 23, 27, 0.1);
+  box-shadow: 7px 7px 20px -2px rgba(0, 23, 27, 0.1);
+  transition: all ease-in 3s;
+}
+
+button:hover {
+  cursor: pointer;
+  -webkit-box-shadow: inset 2px 3px 10px 3px rgb(0 23 27 / 10%);
+  -moz-box-shadow: inset 2px 3px 10px 3px rgb(0 23 27 / 10%);
+  box-shadow: inset 2px 3px 10px 3px rgb(0 23 27 / 10%);
+}
+
+ul.list-notes {
+  margin: 10px 20px;
+  list-style-type: circle;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-left: 20px;
+}
+
+ul.list-notes li.note:hover {
+  cursor: pointer;
+  text-decoration: line-through;
 }
